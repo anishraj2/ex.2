@@ -25,19 +25,52 @@ The result is that combinational logic circuits have no feedback, and any change
 5.	For different input combinations, generate the timing diagram.
 
 ## Simplification:
+![Simplification](2.jpg)
+<br>
+![Simplification](1.jpg)
 
-## Truth Table:
-
+## Truth Table
+![Truth Table](4.jpg)
+<br>
+![Truth Table](3.jpg)
 ## Program:
+module exp2a(a,b,c,d,f1,f2);
 
+input a,b,c,d;
 
+output f1,f2;
+
+wire adash,bdash,cdash,ddash,x,y,z,p,q,r;
+
+not(adash,a);
+
+not(bdash,b);
+
+not(cdash,c);
+
+not(ddash,d);
+
+and(x,bdash,ddash);
+
+and(y,adash,b,d);
+
+and(z,a,b,cdash);
+
+or(f1,x,y,z);
+
+and(p,cdash,d);
+
+and(q,a,c);
+
+and(r,b,c);
+
+or(f2,p,q,r);
+
+endmodule
 ## RTL Schematic:
-
-
-
-
+![RTL Schematic](1.png)
 ## Timing Diagram:
-
+![Timing Diagram](2.png)
 
 
 
